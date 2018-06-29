@@ -28,6 +28,12 @@ class ProductTest < ActiveSupport::TestCase
     assert product.valid?
   end
 
+  def new_product(image_url)
+    Product.new(title: 'My Book Title',
+                description: 'yyy',
+                price:        1,
+                image_url:    image_url)
+  end
   test "image url" do
     ok = %w{ fred.gif fred.jpg fred.png FRED.JPG FRED.Jpg
              http://a.b.c/x/y/z/fred.gif }
